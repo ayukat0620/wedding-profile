@@ -4,37 +4,101 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>私たちの結婚式プロフィール</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
   <style>
-    body { font-family: sans-serif; margin: 0; padding: 0; }
-    header { background: #f8b500; color: white; padding: 20px; text-align: center; }
-    .container { padding: 20px; }
-    .profile { display: flex; flex-direction: column; align-items: center; }
-    .profile img { max-width: 200px; border-radius: 50%; margin-bottom: 10px; }
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background: #fefefe;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      border-bottom-left-radius: 50px;
+      border-bottom-right-radius: 50px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .profile {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .profile img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
+    }
+    h2 {
+      margin: 10px 0;
+      font-size: 1.8em;
+      color: #444;
+    }
+    p {
+      font-size: 1.1em;
+      line-height: 1.6em;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #777;
+      font-size: 0.9em;
+    }
     @media(min-width: 600px) {
-      .profile { flex-direction: row; }
-      .profile img { margin-right: 20px; }
+      .profile {
+        flex-direction: row;
+        text-align: left;
+      }
+      .profile img {
+        margin-right: 40px;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>私たちのプロフィール</h1>
+    <h1>Takuya & Sakura</h1>
+    <p>Wedding Profile Book</p>
   </header>
+
   <div class="container">
     <div class="profile">
-      <img src="groom.jpg" alt="新郎">
+      <img src="images/groom.jpg" alt="新郎">
       <div>
         <h2>新郎：Takuya</h2>
-        <p>趣味は写真撮影と旅行。</p>
+        <p>旅行とカメラが大好きです。<br>出身：福井県<br>血液型：O型</p>
       </div>
     </div>
+
     <div class="profile">
-      <img src="bride.jpg" alt="新婦">
+      <img src="images/bride.jpg" alt="新婦">
       <div>
         <h2>新婦：Mai</h2>
-        <p>お料理とカフェ巡りが大好きです。</p>
+        <p>料理とカフェ巡りが趣味です。<br>出身：東京都<br>血液型：A型</p>
       </div>
     </div>
   </div>
+
+  <footer>
+    &copy; 2025 Takuya & Mai Wedding
+  </footer>
+
 </body>
 </html>

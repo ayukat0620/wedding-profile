@@ -6,75 +6,142 @@
   <title>私たちの結婚式プロフィール</title>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
   <style>
-    body {
+    body, html {
       margin: 0;
+      padding: 0;
+      height: 100%;
       font-family: 'Quicksand', sans-serif;
-      background: #fefefe;
-      color: #333;
+      color: #fff;
+      overflow-x: hidden;
     }
+
+    .background-slideshow {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .background-slideshow img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 2s ease-in-out;
+    }
+
+    .background-slideshow img.active {
+      opacity: 1;
+    }
+
     header {
-      background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
-      color: white;
+      background: rgba(0, 0, 0, 0.5);
       padding: 40px 20px;
       text-align: center;
       border-bottom-left-radius: 50px;
       border-bottom-right-radius: 50px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
     }
+
     .container {
       max-width: 900px;
       margin: 40px auto;
       padding: 0 20px;
     }
-    .profile {
-      background: white;
+
+    .profile, .qa {
+      background: rgba(255, 255, 255, 0.85);
+      color: #333;
       border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
       margin-bottom: 40px;
       padding: 30px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
     }
+
     .profile img {
       width: 180px;
       height: 180px;
       border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
       margin-bottom: 20px;
+      border: 3px solid #8fb996;
     }
-    h2 {
+
+    h1, h2 {
       margin: 10px 0;
-      font-size: 1.8em;
-      color: #444;
+      font-size: 2em;
+      color: #6b4c3b;
     }
+
     p {
       font-size: 1.1em;
       line-height: 1.6em;
     }
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #777;
-      font-size: 0.9em;
-    }
+
     @media(min-width: 600px) {
       .profile {
         flex-direction: row;
         text-align: left;
+        display: flex;
+        align-items: center;
       }
       .profile img {
         margin-right: 40px;
       }
     }
+
+    .qa-question {
+      background: #8fb996;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-bottom: 5px;
+      transition: background 0.3s;
+    }
+
+    .qa-question:hover {
+      background: #729e84;
+    }
+
+    .qa-answer {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 20px;
+      border-left: 5px solid #8fb996;
+      background: #f9f6ef;
+      border-radius: 10px;
+      transition: all 0.5s ease;
+    }
+
+    .qa-answer.open {
+      padding: 10px 20px;
+      max-height: 500px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      font-size: 0.9em;
+    }
   </style>
 </head>
 <body>
 
+  <div class="background-slideshow">
+    <img src="images/image_1.jpg" class="active">
+    <img src="images/image_2.jpg">
+    <img src="images/image_3.jpg">
+  </div>
+
   <header>
-    <h1>Takuya & Sakura</h1>
+    <h1>Takuya & Mai</h1>
     <p>Wedding Profile Book</p>
   </header>
 
@@ -82,7 +149,7 @@
     <div class="profile">
       <img src="images/groom.jpg" alt="新郎">
       <div>
-        <h2>新郎：Takuya</h2>
+        <h2>新郎：たくや</h2>
         <p>旅行とカメラが大好きです。<br>出身：福井県<br>血液型：O型</p>
       </div>
     </div>
@@ -90,15 +157,55 @@
     <div class="profile">
       <img src="images/bride.jpg" alt="新婦">
       <div>
-        <h2>新婦：Mai</h2>
+        <h2>新婦：まい</h2>
         <p>料理とカフェ巡りが趣味です。<br>出身：東京都<br>血液型：A型</p>
       </div>
+    </div>
+
+    <div class="qa">
+      <h2>Q & A</h2>
+
+      <div class="qa-item">
+        <div class="qa-question">出会ったきっかけは？</div>
+        <div class="qa-answer">共通の友人の紹介で知り合いました。</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-question">プロポーズはどんな感じ？</div>
+        <div class="qa-answer">夜景の見えるレストランでサプライズプロポーズしました！</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-question">お互いの好きなところは？</div>
+        <div class="qa-answer">たくや：まいの笑顔！<br>まい：たくやの優しさ！</div>
+      </div>
+
     </div>
   </div>
 
   <footer>
     &copy; 2025 Takuya & Mai Wedding
   </footer>
+
+  <script>
+    // Q&A 開閉
+    const questions = document.querySelectorAll('.qa-question');
+    questions.forEach(q => {
+      q.addEventListener('click', () => {
+        const answer = q.nextElementSibling;
+        answer.classList.toggle('open');
+      });
+    });
+
+    // 背景スライドショー
+    const slides = document.querySelectorAll('.background-slideshow img');
+    let current = 0;
+    setInterval(() => {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 5000);
+  </script>
 
 </body>
 </html>

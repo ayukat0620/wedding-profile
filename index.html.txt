@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>私たちの結婚式プロフィール</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; padding: 0; }
+    header { background: #f8b500; color: white; padding: 20px; text-align: center; }
+    .container { padding: 20px; }
+    .profile { display: flex; flex-direction: column; align-items: center; }
+    .profile img { max-width: 200px; border-radius: 50%; margin-bottom: 10px; }
+    @media(min-width: 600px) {
+      .profile { flex-direction: row; }
+      .profile img { margin-right: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>私たちのプロフィール</h1>
+  </header>
+  <div class="container">
+    <div class="profile">
+      <img src="groom.jpg" alt="新郎">
+      <div>
+        <h2>新郎：たくや</h2>
+        <p>趣味は写真撮影と旅行。</p>
+      </div>
+    </div>
+    <div class="profile">
+      <img src="bride.jpg" alt="新婦">
+      <div>
+        <h2>新婦：さくら</h2>
+        <p>お料理とカフェ巡りが大好きです。</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

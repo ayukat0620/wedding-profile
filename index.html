@@ -6,12 +6,14 @@
   <title>Wedding Profile</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400&display=swap');
+
     html, body {
       margin: 0;
       padding: 0;
-      font-family: sans-serif;
+      font-family: 'Noto Sans JP', sans-serif;
       scroll-behavior: smooth;
     }
+
     section {
       height: 100vh;
       width: 100%;
@@ -22,164 +24,113 @@
       color: white;
       position: relative;
       overflow: hidden;
+      flex-direction: column;
+      padding: 1em;
+      box-sizing: border-box;
     }
-
-    /* Loading Screen */
-    /* #loading {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #5a4634;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 2em;
-      z-index: 9999;
-      animation: fadeOut 1s ease 2s forwards;
-    }
-    @keyframes fadeOut {
-      to { opacity: 0; visibility: hidden; }
-    } */
 
     /* 1st Page */
     .page1 {
       background-image: url('images/image_1.jpg');
       background-size: cover;
       background-position: center;
-      position: relative;
     }
 
     .greeting {
-      color: #ffffff;
-      padding: 2em;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 1.5em;
       border-radius: 10px;
-      max-width: 80%;
-      text-align: end;
-      font-size: 5em;
-      font-family: 'Montserrat';
-      line-height: 1.6em;
-      position: relative;
-      bottom: 20px; /* 下から20px上に移動 */
+      font-size: 2em;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.5em;
+      text-align: center;
     }
 
-    /* 2nd Page with slideshow */
+    /* 2nd Page */
     .page2 {
-      background-color: beige;
-      height: 100vh;
-      width: 100%;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
       background-size: cover;
       background-position: center;
-      animation: bgSlideshow 15s infinite;
-      color: rgb(0, 0, 0);
-      padding: 2em;
+      transition: background-image 1s ease-in-out;
+      color: #000;
     }
 
     .circle-image img {
-      width: 500px;
-      height: 500px;
+      width: 60vw;
+      max-width: 250px;
+      height: 60vw;
+      max-height: 250px;
       object-fit: cover;
       border-radius: 50%;
       border: 4px solid white;
       box-shadow: 0 0 15px rgba(0,0,0,0.3);
-      margin-bottom: auto;
-      margin-top: auto;
+      margin-bottom: 1em;
     }
 
     .greeting-text {
+      background-color: rgba(255, 255, 255, 0.8);
+      color: #333;
       padding: 1.5em;
       border-radius: 10px;
       max-width: 90%;
-      font-size: 1.1em;
+      font-size: 1em;
       line-height: 1.6em;
     }
 
+    /* 3rd Page (例用意だけ) */
     .page3 {
       background-color: #FFEBCD;
-      height: 100vh;
-      width: 100%;
     }
 
-    .accordion {
-      background: rgba(0,0,0,0.5);
-      border-radius: 8px;
-      width: 90%;
-      max-width: 600px;
-    }
-    .accordion-item {
-      border-bottom: 1px solid #ccc;
-    }
-    .question {
-      padding: 1em;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s ease;
-      padding: 0 1em;
-    }
-    .accordion-item.open .answer {
-      max-height: 200px;
-      padding: 1em;
+    /* アコーディオンなどは省略 or 必要なら後ほど追加 */
+
+    @media screen and (max-width: 480px) {
+      .greeting {
+        font-size: 1.5em;
+      }
+
+      .greeting-text {
+        font-size: 0.95em;
+      }
     }
   </style>
 </head>
 <body>
 
-<!-- Loading Screen -->
-<!-- <div id="loading">Loading...</div> -->
-
-<!-- Page 1: Photo Only -->
+<!-- Page 1 -->
 <section class="page1">
   <div class="greeting">
     <p>Welcome to Our Wedding</p>
   </div>
 </section>
 
-<!-- Page 2: Questions + Slideshow Background -->
-<section class="page2">
+<!-- Page 2 -->
+<section class="page2" id="slideshow">
   <div class="circle-image">
     <img src="images/image_2.jpg" alt="ふたりの写真">
   </div>
   <div class="greeting-text">
-    <p>本日は私たちの結婚式にお越しいただき　誠にありがとうございます</p>
-    <p>皆様にあたたかく見守られ　今日の日を迎えられたことを嬉しく思います</p>
-    <p>未熟な二人ですが　手を取り合い　ともに歩んでいきたいと思います</p>
-    <p>どうぞ　楽しいひと時をお過ごしください</p>
-    <p>小林　拓也・麻衣</p>
+    <p>本日は私たちの結婚式にお越しいただき、誠にありがとうございます。</p>
+    <p>皆様にあたたかく見守られ、今日の日を迎えられたことを嬉しく思います。</p>
+    <p>未熟な二人ですが、手を取り合い、ともに歩んでいきたいと思います。</p>
+    <p>どうぞ楽しいひと時をお過ごしください。</p>
+    <p>小林 拓也・麻衣</p>
   </div>
 </section>
 
 <script>
-  // Accordion behavior
-  document.querySelectorAll('.question').forEach(q => {
-    q.addEventListener('click', () => {
-      q.parentElement.classList.toggle('open');
-    });
-  });
-
-  // Slideshow background for page2
+  // 背景スライドショー（2ページ目）
   const slideshow = document.getElementById('slideshow');
   const backgrounds = [
-    'images/image_1.jpg',
     'images/image_2.jpg',
-    'images/image_3.jpg'
+    'images/image_3.jpg',
+    'images/image_4.jpg'
   ];
   let current = 0;
   setInterval(() => {
     current = (current + 1) % backgrounds.length;
     slideshow.style.backgroundImage = `url(${backgrounds[current]})`;
-  }, 5000); // Change every 5 seconds
+  }, 5000); // 5秒ごとに切り替え
 </script>
 
 </body>

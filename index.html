@@ -1,137 +1,89 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wedding Profile</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400&display=swap');
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Noto Sans JP', sans-serif;
-      scroll-behavior: smooth;
-    }
-
-    section {
-      height: 100vh;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      position: relative;
-      overflow: hidden;
-      flex-direction: column;
-      padding: 1em;
-      box-sizing: border-box;
-    }
-
-    /* 1st Page */
-    .page1 {
-      background-image: url('images/image_1.jpg');
-      background-size: cover;
-      background-position: center;
-    }
-
-    .greeting {
-      background: rgba(0, 0, 0, 0.5);
-      color: #fff;
-      padding: 1.5em;
-      border-radius: 10px;
-      font-size: 2em;
-      font-family: 'Montserrat', sans-serif;
-      line-height: 1.5em;
-      text-align: center;
-    }
-
-    /* 2nd Page */
-    .page2 {
-      background-size: cover;
-      background-position: center;
-      transition: background-image 1s ease-in-out;
-      color: #000;
-    }
-
-    .circle-image img {
-      width: 60vw;
-      max-width: 250px;
-      height: 60vw;
-      max-height: 250px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid white;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
-      margin-bottom: 1em;
-    }
-
-    .greeting-text {
-      background-color: rgba(255, 255, 255, 0.8);
-      color: #333;
-      padding: 1.5em;
-      border-radius: 10px;
-      max-width: 90%;
-      font-size: 1em;
-      line-height: 1.6em;
-    }
-
-    /* 3rd Page (例用意だけ) */
-    .page3 {
-      background-color: #FFEBCD;
-    }
-
-    /* アコーディオンなどは省略 or 必要なら後ほど追加 */
-
-    @media screen and (max-width: 480px) {
-      .greeting {
-        font-size: 1.5em;
-      }
-
-      .greeting-text {
-        font-size: 0.95em;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- Page 1 -->
-<section class="page1">
-  <div class="greeting">
-    <p>Welcome to Our Wedding</p>
-  </div>
-</section>
+  <!-- Page 1 -->
+  <section class="page1">
+    <div class="greeting">
+      <p>Welcome to Our Wedding</p>
+    </div>
+  </section>
 
-<!-- Page 2 -->
-<section class="page2" id="slideshow">
-  <div class="circle-image">
-    <img src="images/image_2.jpg" alt="ふたりの写真">
-  </div>
-  <div class="greeting-text">
-    <p>本日は私たちの結婚式にお越しいただき、誠にありがとうございます。</p>
-    <p>皆様にあたたかく見守られ、今日の日を迎えられたことを嬉しく思います。</p>
-    <p>未熟な二人ですが、手を取り合い、ともに歩んでいきたいと思います。</p>
-    <p>どうぞ楽しいひと時をお過ごしください。</p>
-    <p>小林 拓也・麻衣</p>
-  </div>
-</section>
+  <!-- Page 2 -->
+  <section class="page2" >
+    <div class="circle-image">
+      <img src="images/image_2.jpg" alt="ふたりの写真" />
+    </div>
+    <div class="greeting-text">
+      <p>本日は私たちの結婚式にお越しいただき<br>誠にありがとうございます</p>
+      <p>皆様にあたたかく見守られ 今日の日を迎えられたことを嬉しく思います</p>
+      <p>未熟な二人ですが 手を取り合い ともに歩んでいきたいと思います</p>
+      <p>どうぞ楽しいひと時をお過ごしください</p>
+      <p>小林 拓也・麻衣</p>
+    </div>
+  </section>
 
-<script>
-  // 背景スライドショー（2ページ目）
-  const slideshow = document.getElementById('slideshow');
-  const backgrounds = [
-    'images/image_2.jpg',
-    'images/image_3.jpg',
-    'images/image_4.jpg'
-  ];
-  let current = 0;
-  setInterval(() => {
-    current = (current + 1) % backgrounds.length;
-    slideshow.style.backgroundImage = `url(${backgrounds[current]})`;
-  }, 5000); // 5秒ごとに切り替え
-</script>
+  <!-- Page 3 -->
+  <section class="page3 fade-in-section">
+    <div class="overlay">
+      <div class="profile-text">
+        <h2>拓也</h2>
+        <p>1993年6月12日生まれ</p>
+        <p>趣味：カメラ・キャンプ・音楽鑑賞</p>
+        <p>性格：おだやかでマイペース。聞き上手。</p>
+        <p>ふたりで一緒に、毎日を楽しく笑って過ごしていきたいです。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page 4 -->
+   <section class="page4 fade-in-section">
+    <div class="overlay">
+      <div class="profile-text">
+        <h2>麻衣</h2>
+        <p>1993年6月12日生まれ</p>
+        <p>趣味：カメラ・キャンプ・音楽鑑賞</p>
+        <p>性格：おだやかでマイペース。聞き上手。</p>
+        <p>ふたりで一緒に、毎日を楽しく笑って過ごしていきたいです。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- question page-->
+  <section class="page5">
+    <div class="question_inner">
+      <p class="question_text">
+        "質問"
+      </p>
+      <ui class="question_list">
+        <li class="question_list_item">
+          <button class="question_list_button js_qustion_open1">
+            <span class="qustion_list_wrapper">
+              <span class="qestion_list_lead">
+                "質問事項1"
+              </span>
+              <span class="question_list_toggle">
+                <span class="question_list_toggle_inner">
+
+                </span>
+              </span>
+            </span>
+          </button>
+        </li>
+      </ui>
+    </div>
+  </section>
+
+  <!-- コンセプト -->
+    
+  <!-- 席次表 -->
 
 </body>
 </html>

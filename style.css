@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans JP', sans-serif;
+    scroll-behavior: smooth;
+}
+
+section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    flex-direction: column;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+/* 1 Page */
+.page1 {
+    background-image: url('images/image_1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.greeting {
+    color: #fff;
+    padding: 1.5em;
+    border-radius: 10px;
+    font-size: 2em;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5em;
+    text-align: center;
+}
+
+/* 2 Page */
+.page2 {
+    background-size: cover;
+    background-position: center;
+    /* background-color: #FFFAF0; */
+    color: #000;
+}
+
+.circle-image img {
+    width: 60vw;
+    max-width: 250px;
+    height: 60vw;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    margin-bottom: 1em;
+}
+
+.greeting-text {
+    color: black;
+    padding: 1.5em;
+    border-radius: 10px;
+    max-width: 90%;
+    font-size: 1em;
+    line-height: 1.6em;
+}
+
+/* 3 Page  */
+.page3 {
+    position: relative;
+    background-image: url('images/M0172.jpg');
+    background-color: #000;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    color: white;
+    overflow: hidden;
+}
+
+/* 4 Page  */
+.page4 {
+    background-image: url('images/M0172.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    color: white;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 2em 1em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.profile-text {
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明黒背景 */
+    padding: 1.5em;
+    border-radius: 10px;
+    max-width: 90%;
+    font-size: 1em;
+    line-height: 1.6em;
+}
+
+.portrait-image {
+    flex-shrink: 0;
+}
+
+.portrait-image img {
+    width: 120px;
+    height: 180px; /* 縦長の資格写真風 */
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* page5 */
+.page5 {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-color: antiquewhite;
+}
+
+.question_inner {
+    padding: 0 20rem;
+}
+
+.question_text {
+    color: black;
+    font-size: 14rem;
+    line-height: 1.8;
+}
+
+.question_list {
+    display: flex;
+    flex-direction: column;
+    gap: 28rem;
+    margin-top: 40rem;
+}
+
+.qustion_list_button {
+    --toggle-deg: 90deg;
+    display: flex;
+    flex-direction: column;
+}
+
+.question_list_wrapper {
+    display: flex;
+    gap: 15rem;
+    justify-content: space-between;
+}
+
+.question_list_lead {
+    font-size: 14rem;
+    line-height: 1.6;
+    letter-spacing: -.02em;
+}
+
+.question_list_toggle {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 60rem;
+    height: 60rem;
+    background-color: white;
+    border-radius: 4rem;
+}
+
+.question_list_toggle_inner {
+    position: relative;
+    width: 18rem;
+    height: 2rem;
+}
+
+/* アコーディオンなどは省略 or 必要なら後ほど追加 */
+
+@media screen and (max-width: 480px) {
+    .greeting {
+    font-size: 1.5em;
+    }
+
+    .greeting-text {
+    font-size: 0.95em;
+    }
+}
+
+/* フェードイン用 */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

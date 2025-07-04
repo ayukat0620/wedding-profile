@@ -58,32 +58,58 @@
 
   <!-- question page-->
   <section class="page5">
-    <div class="question_inner">
-      <p class="question_text">
-        "質問"
-      </p>
-      <ui class="question_list">
-        <li class="question_list_item">
-          <button class="question_list_button js_qustion_open1">
-            <span class="qustion_list_wrapper">
-              <span class="qestion_list_lead">
-                "質問事項1"
-              </span>
-              <span class="question_list_toggle">
-                <span class="question_list_toggle_inner">
+    <div class="card-container">
+      <button class="card card-bg1" data-modal="modal1">
+        <div class="card-bottom">
+          <p class="card-question">Q. 質問文</p>
+          <div class="toggle-button">▼</div>
+        </div>
+      </button>
 
-                </span>
-              </span>
-            </span>
-          </button>
-        </li>
-      </ui>
+      <button class="card card-bg2" data-modal="modal2">
+        <div class="card-bottom">
+          <p class="card-question">Q. 質問文</p>
+          <div class="toggle-button">▼</div>
+        </div>
+      </button>
+
+      <button class="card card-bg3" data-modal="modal3">
+        <div class="card-bottom">
+          <p class="card-question">Q. 質問文</p>
+          <div class="toggle-button">▼</div>
+        </div>
+      </button>
     </div>
+
+  <!-- モーダル -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h2></h2>
+      <p>内容を記載します。</p>
+    </div>
+  </div>
+
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h2></h2>
+      <p>内容を記載します。</p>
+    </div>
+  </div>
+
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h2></h2>
+      <p>内容を記載します。</p>
+    </div>
+  </div>
   </section>
 
   <!-- コンセプト -->
     
   <!-- 席次表 -->
-
+  <script src="script.js"></script>
 </body>
 </html>

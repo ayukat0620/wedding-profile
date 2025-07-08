@@ -172,7 +172,7 @@ section {
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
-  padding: 2rem;
+  padding: 2rem 1rem;
 }
 
 .card {
@@ -280,4 +280,33 @@ section {
 .fade-in-section.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* 画像スクロール */
+.images-list {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 1rem;
+  gap: 1rem;
+  width: 100%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.images-list img {
+  flex: 0 0 auto;
+  max-width: 90vw;     /* 画面幅に応じて調整 */
+  max-height: 80vh;    /* 高さ制限で画面からはみ出さない */
+  height: auto;
+  object-fit: contain; /* アスペクト比を維持して表示 */
+  scroll-snap-align: center; /* 中央でスナップ */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.images-list::-webkit-scrollbar {
+  display: none;
 }

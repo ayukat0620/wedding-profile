@@ -297,7 +297,7 @@ section {
 
 .images-list img {
   flex: 0 0 auto;
-  max-width: 90vw;     /* 画面幅に応じて調整 */
+  max-width: 90%;     /* 画面幅に応じて調整 */
   max-height: 80vh;    /* 高さ制限で画面からはみ出さない */
   height: auto;
   object-fit: contain; /* アスペクト比を維持して表示 */
@@ -309,4 +309,68 @@ section {
 
 .images-list::-webkit-scrollbar {
   display: none;
+}
+
+header {
+  top: 16px;
+  left: 16px;
+  z-index: 1000; /* 他の要素より前面に表示 */
+  width: 30px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.hamburger {
+  width: 30px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: black;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.nav-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #333;
+  color: white;
+  display: none;
+  z-index: 999;
+}
+
+.nav-menu ul {
+  list-style: none;
+  padding: 60px 20px 20px; /* 上の60pxはハンバーガーのスペース */
+  margin: 0;
+}
+
+.nav-menu li {
+  margin-bottom: 10px;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px 0;
+}
+
+.nav-menu a:hover {
+  background: #555;
+}
+
+.nav-menu.active {
+  display: block;
 }

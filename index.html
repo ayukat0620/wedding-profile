@@ -8,6 +8,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400&display=swap" rel="stylesheet">
 </head>
 <body>
+<header>
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav class="nav-menu" id="nav-menu">
+    <ul>
+      <li><a href="#greet">挨拶</a></li>
+      <li><a href="#profile">プロフィール</a></li>
+      <li><a href="#Q&A">Q&A</a></li>
+      <li><a href="#OurPhoto">写真</a></li>
+    </ul>
+  </nav>
+</header>
 
   <!-- Page 1 -->
   <section class="page1">
@@ -17,7 +33,7 @@
   </section>
 
   <!-- Page 2 -->
-  <section class="page2" >
+  <section class="page2" id="greet">
     <div class="circle-image">
       <img src="images/image_2.jpg" alt="ふたりの写真" />
     </div>
@@ -31,7 +47,7 @@
   </section>
 
   <!-- Page 3 -->
-  <section class="page3 fade-in-section">
+  <section class="page3 fade-in-section" id="Profile">
     <div class="overlay">
       <div class="profile-text">
         <h2>拓也</h2>
@@ -57,7 +73,7 @@
   </section>
 
   <!-- question page-->
-  <section class="page5">
+  <section class="page5" id="Q&A">
     <div class="card-container">
       <button class="card card-bg1" data-modal="modal1">
         <div class="card-bottom">
@@ -107,7 +123,7 @@
   </div>
   </section>
 
-  <section class="page5">
+  <section class="page5" id="OurPhoto">
     <div class="images-list">
       <img src="images/M0010.jpg" alt="">
       <img src="images/M0019.jpg" alt="">
@@ -115,8 +131,6 @@
       <img src="images/M0062.jpg" alt="">
     </div>
   </section>
-
-  <!-- コンセプト -->
     
   <!-- 席次表 -->
   <script src="script.js"></script>

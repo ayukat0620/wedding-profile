@@ -5,6 +5,7 @@ html, body {
     padding: 0;
     font-family: 'Noto Sans JP', sans-serif;
     scroll-behavior: smooth;
+    overflow-x: hidden; /* はみ出し対策 */
 }
 
 section {
@@ -312,31 +313,46 @@ section {
 }
 
 header {
-  top: 16px;
-  left: 16px;
-  z-index: 1000; /* 他の要素より前面に表示 */
-  width: 30px;
-  height: 22px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
+  position: relative;
+  z-index: 900;
+  width: 90%;
+  background-color: #fff; /* 任意 */
+  padding: 16px;
+}
+
+@media (max-width: 480px) {
+  .hamburger {
+    width: 28px;
+    right: 12px;
+  }
 }
 
 .hamburger {
-  width: 30px;
-  cursor: pointer;
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 1000;
+  width: 24px;  /* ← 小さめでもOK */
+  height: 24px;
+  padding: 4px; /* ← 回転で出る部分を吸収！ */
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  box-sizing: content-box; /* ← paddingがwidthに影響しないように */
+  background: transparent;
 }
 
+/* ハンバーガーの線 */
 .hamburger span {
   display: block;
+  width: 100%;
   height: 3px;
   background: black;
-  border-radius: 2px;
-  transition: 0.3s;
+  border-radius: 1px;
+  transition: 0.3s ease;
+  transform-origin: center;
 }
 
 .nav-menu {
@@ -348,6 +364,7 @@ header {
   color: white;
   display: none;
   z-index: 999;
+  overflow: visible;
 }
 
 .nav-menu ul {
@@ -373,4 +390,56 @@ header {
 
 .nav-menu.active {
   display: block;
+}
+
+/* ✕ボタン */
+.close-button {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  width: 24px;
+  height: 24px;
+  z-index: 1001;
+  display: none; /* ← 最初は非表示 */
+  cursor: pointer;
+  overflow: visible;
+}
+
+.close-button span {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 80%;
+  height: 3px;
+  background: black;
+  border-radius: 2px;
+}
+
+.close-button span:first-child {
+  transform: rotate(45deg);
+}
+
+.close-button span:last-child {
+  transform: rotate(-45deg);
+}
+
+.photo-title {
+  text-align: center;
+  font-size: 28px;
+  margin: 40px 0 20px; /* 上下の余白 */
+  color: #333;
+  font-weight: bold;
+}
+
+.seating-chart {
+  background-image: url('images/席次表.jpg'); /* 背景画像のパス */
+  background-size: cover; /* 画面にフィットさせる */
+  background-position: center center; /* 中央寄せ */
+  background-repeat: no-repeat;
+  height: 100vh; /* 画面全体の高さ */
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

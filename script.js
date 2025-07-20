@@ -45,8 +45,27 @@ modals.forEach(modal => {
 });
 
 const hamburger = document.getElementById('hamburger');
+const closeBtn = document.getElementById('close-button');
 const navMenu = document.getElementById('nav-menu');
 
 hamburger.addEventListener('click', () => {
-  navMenu.classList.toggle('active');
+  navMenu.classList.add('active');
+  hamburger.style.display = 'none';
+  closeBtn.style.display = 'block';
+});
+
+closeBtn.addEventListener('click', () => {
+  navMenu.classList.remove('active');
+  hamburger.style.display = 'flex';
+  closeBtn.style.display = 'none';
+});
+
+// 🔽 追加する部分：リンククリックで自動的に閉じる
+const navLinks = navMenu.querySelectorAll('a'); // メニュー内のすべてのリンク
+
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+  });
 });

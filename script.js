@@ -69,3 +69,24 @@ navLinks.forEach(link => {
     navMenu.classList.remove('active');
   });
 });
+
+const modal = document.getElementById("imageModal");
+const img = document.getElementById("seatingImage");
+const modalImg = document.getElementById("modalImage");
+const closeButton = document.getElementById("modalClose");
+
+img.onclick = function () {
+  modal.style.display = "block";
+  modalImg.src = this.src;
+}
+
+closeButton.onclick = function () {
+  modal.style.display = "none";
+}
+
+// 背景クリックでも閉じる
+modal.onclick = function (event) {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+}

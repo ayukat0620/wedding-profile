@@ -40,6 +40,28 @@ section {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.5em;
     text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInOut 3s ease forwards; /* 全体3秒 */
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
 }
 
 /* 2 Page */
@@ -331,8 +353,6 @@ header {
   position: relative;
   z-index: 900;
   width: 90%;
-  background-color: #fff; /* 任意 */
-  padding: 16px;
 }
 
 @media (max-width: 480px) {

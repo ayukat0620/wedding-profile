@@ -254,12 +254,12 @@ section {
 /* 全体レイアウト */
 .card-container {
   background-color: rgb(220, 221, 231);
-  display: flex;
+  display: grid;
   flex-wrap: wrap;
-  height: auto;
-  gap: 1rem;
-  justify-content: center;
-  padding: 2rem 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 2rem;
+  justify-items: center;
+  padding: 2rem;
 }
 
 .card {
@@ -516,7 +516,7 @@ header {
 }
 
 /* 画面全体に表示する画像 */
-.seating-chart-page {
+/* .seating-chart-page {
   height: 100vh;
   min-height: 80vh;
   width: 100%;
@@ -531,6 +531,48 @@ header {
   max-height: 100%;
   cursor: pointer;
   object-fit: contain;
+} */
+
+.seating-chart-page {
+  display: flex;
+  flex-direction: column;   /* 縦並び */
+  align-items: center;      /* 中央寄せ */
+  justify-content: flex-start;
+  min-height: 100vh;        /* 画面いっぱい */
+  padding: 2rem 1rem;
+  background: rgb(220, 221, 231);
+}
+
+.seating-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  color: #000;
+}
+
+.seating-title-sub {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  color: #000;
+}
+
+.seating-wrapper {
+  flex: 1;                  /* 残りの高さで中央に配置 */
+  display: flex;
+  align-items: center;      /* 縦方向中央 */
+  justify-content: center;  /* 横方向中央 */
+  width: 100%;
+}
+
+.seating-image {
+  max-width: 90%;
+  max-height: 80vh;         /* 画面に収まるように */
+  object-fit: contain;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 /* モーダル全体 */

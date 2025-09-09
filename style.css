@@ -25,7 +25,7 @@ section {
 /* 1 Page */
 .page1 {
   height: 100vh;
-    background-image: url('images/M0151.jpg');
+    background-image: url('images/M0207.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -33,11 +33,11 @@ section {
 }
 
 .greeting {
-    position: fixed;          /* 画面に固定 */
-    bottom: 40px;             /* 下からの距離 */
+    position: absolute;          /* 画面に固定 */
+    top: 100px;             /* 下からの距離 */
     transform: translateX(-50%); /* 中央揃え */
 
-    color: #fff;
+    color: #583822;
     padding: 1.5em;
     border-radius: 10px;
     font-size: 2em;
@@ -206,7 +206,17 @@ section {
     position: relative;
     background-size: cover;
     background-position: center;
-    background-color: rgb(220, 221, 231);
+    background-color: white;
+}
+
+.qa-heading {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: #333;
+  letter-spacing: 2px;
+  font-family: 'Playfair Display', serif;
 }
 
 .page6 {
@@ -214,7 +224,7 @@ section {
   position: relative;
   background-size: cover;
   background-position: center;
-  background-color: rgb(220, 221, 231);
+  background-color: white;
   min-height: 100vh; /* スクロールがない場合も画面いっぱいに表示 */
   padding: 60px 20px; /* 上下に余白を追加 */
   box-sizing: border-box;
@@ -253,7 +263,7 @@ section {
 
 /* 全体レイアウト */
 .card-container {
-  background-color: rgb(220, 221, 231);
+  background-color: white;
   display: grid;
   flex-wrap: wrap;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
@@ -278,11 +288,11 @@ section {
 }
 
 .card-bg1 {
-    background-image: url('images/image_1.jpg');
+    background-image: url('images/MLK01310010.jpg');
 }
 
 .card-bg2 {
-    background-image: url('images/image_2.jpg');
+    background-image: url('images/M0211.jpg');
 }
 
 .card-bg3 {
@@ -541,7 +551,7 @@ header {
   justify-content: flex-start;
   min-height: 100vh;        /* 画面いっぱい */
   padding: 2rem 1rem;
-  background: rgb(220, 221, 231);
+  background: white;
 }
 
 .seating-title {

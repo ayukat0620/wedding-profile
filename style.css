@@ -609,13 +609,6 @@ header {
   cursor: pointer;
 }
 
-body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: "Noto Sans JP", sans-serif;
-    }
-
     /* 背景 */
     .share-section {
       height: 100vh;

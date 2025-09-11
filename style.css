@@ -679,3 +679,27 @@ header {
     .share-button:hover {
       background: #333;
     }
+
+    .seating-page {
+      padding: 50px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .seating-page h1 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .seat-image {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: block;
+    }

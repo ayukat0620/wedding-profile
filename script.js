@@ -90,3 +90,19 @@ modal.onclick = function (event) {
     modal.style.display = "none";
   }
 }
+
+const container = document.querySelector('.images-list');
+const dots = document.querySelectorAll('.dot');
+const figures = document.querySelectorAll('.images-list figure');
+
+container.addEventListener('scroll', () => {
+  const scrollLeft = container.scrollLeft;
+  const width = container.clientWidth;
+
+  // 現在のインデックスを計算（中央に近いものを選ぶ）
+  let index = Math.round(scrollLeft / width);
+
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+});

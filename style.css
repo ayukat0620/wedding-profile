@@ -278,13 +278,14 @@ section {
   height: 270px;
   background-size: cover;
   background-position: center;
-  border-radius: 4px;
+  border-radius: 8px;
   overflow: hidden;
   font-family: 'Noto Sans JP', sans-serif;
   color: #333;
   display: flex;
-  align-items: flex-end; /* 下部に配置 */
-  border: none;
+  flex-direction: column;
+  justify-content: flex-end; /* 👈 下部に配置 */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .card-bg1 {
@@ -305,12 +306,9 @@ section {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  border-top: 1px solid #ddd;
-  background-color: rgba(255, 255, 255, 0.9);
-  box-sizing: border-box;
-  width: calc(100% - 2rem);
-  margin: 4px 1rem; 
-  border-radius: 8px;  
+  background-color: rgba(255, 255, 255, 0.9); /* 半透明の帯 */
+  border-radius: 0 0 8px 8px;
+  cursor: pointer;
 }
 
 .card-question {
@@ -330,6 +328,33 @@ section {
   display: block;
   transition: transform 0.3s ease;
   transform-origin: center;
+}
+
+/* 答え部分（最初は非表示） */
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 0 1rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.answer-content {
+  font-family: 'Playfair Display', serif;
+}
+
+/* 開いた状態 */
+.card.open .answer {
+  max-height: 200px; /* 中身に合わせて調整 */
+  padding: 1rem;
+}
+
+/* ▼アイコン回転 */
+.card.open .toggle-button {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
 }
 
 /* レスポンシブ対応 */

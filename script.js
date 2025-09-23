@@ -106,3 +106,13 @@ container.addEventListener('scroll', () => {
     dot.classList.toggle('active', i === index);
   });
 });
+
+const cards = document.querySelectorAll(".card");
+
+cards.forEach(card => {
+  const toggle = card.querySelector(".card-bottom");
+
+  toggle.addEventListener("click", () => {
+    card.classList.toggle("open");
+  });
+});

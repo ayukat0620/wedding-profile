@@ -65,8 +65,9 @@ const navLinks = navMenu.querySelectorAll('a'); // メニュー内のすべて�
 
 navLinks.forEach(link => {
   link.addEventListener('click', () => {
-    hamburger.classList.remove('active');
     navMenu.classList.remove('active');
+    hamburger.style.display = 'flex';
+    closeBtn.style.display = 'none';
   });
 });
 

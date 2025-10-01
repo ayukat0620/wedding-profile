@@ -34,7 +34,7 @@ section {
 
 .greeting {
     position: absolute;          /* 画面に固定 */
-    top: 100px;             /* 下からの距離 */
+    top: 60px;             /* 下からの距離 */
     transform: translateX(-50%); /* 中央揃え */
 
     color: #583822;

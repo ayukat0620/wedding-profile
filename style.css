@@ -37,7 +37,7 @@ section {
     top: 60px;             /* 下からの距離 */
     transform: translateX(-50%); /* 中央揃え */
 
-    color: #583822;
+    color: white;
     padding: 1.5em;
     border-radius: 10px;
     font-size: 2em;

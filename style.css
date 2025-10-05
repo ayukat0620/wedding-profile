@@ -25,9 +25,9 @@ section {
 /* 1 Page */
 .page1 {
   height: 100vh;
-    background-image: url('images/M0207.jpg');
-    background-size: cover;
-    background-position: center;
+    background-image: url('images/MLK01310090.jpg');
+    background-position: 30% top;
+    background-size: 250%;
     background-repeat: no-repeat;
     overflow: hidden;
 }
